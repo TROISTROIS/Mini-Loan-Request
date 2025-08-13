@@ -92,8 +92,8 @@ def apply_loan(id):
                 connection.commit()
                 print("Record Inserted Successfully")
             # got stuck records not getting inserted
-            except (Exception, psycopg2.DatabaseError) as error:
-                print(f"Error Connecting to the database: ", error)
+            except (Exception, psycopg2.DatabaseError) as e:
+                print(f"Error Connecting to the database: ", e)
 
             apply(id, user_id, amount, status, created_at, updated_at)
     else:
